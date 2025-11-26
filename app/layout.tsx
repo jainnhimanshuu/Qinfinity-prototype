@@ -1,0 +1,22 @@
+import type { Metadata } from "next";
+import { Providers } from "./providers";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Qinfinity Portal",
+  description: "Centralized organizational portal for integrated microservices",
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className="min-h-screen bg-background antialiased">
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
