@@ -221,7 +221,7 @@ What would you like to know?`;
     }
 
     if (this.matchesPattern(query, ["skill gap", "gap", "training need"])) {
-      const activeGaps = skillGaps.filter((g) => g.status === "open");
+      const activeGaps = skillGaps.filter((g) => !g.resolvedAt);
       return `I found **${skillGaps.length}** skill gaps identified, with **${activeGaps.length}** currently open and requiring attention.`;
     }
 
